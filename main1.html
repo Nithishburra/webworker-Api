@@ -1,0 +1,11 @@
+<script>
+    if(window.Worker){
+        let multhread1 = new Worker("mul.js");
+         multhread1.postMessage({"arg1":30,"arg2":30});
+         multhread1.onmessage = function (e){
+             console.log(e.data);
+         }
+    }else{
+        console.log("the browser is not supporting")
+    }
+</script>

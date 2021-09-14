@@ -1,0 +1,11 @@
+<script>
+    if(window.Worker){
+        let subthread1 = new Worker("sub.js");
+      subthread1.postMessage({"num1":1000,"num2":10});
+     subthread1.onmessage = function(e){
+          const {data} = e;
+          console.log(data.subresult);
+    }
+        }
+    
+</script>

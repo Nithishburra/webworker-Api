@@ -1,0 +1,11 @@
+<script>
+    if(window.worker){
+        let divThread = new Worker("div.js");
+        divThread.postMessage({"num1":40,"num2":2});
+        divThread.onmessage = function(e){
+            console.log(e.data);
+        }
+    }else{
+        console.log("browser is not supporting")
+    }
+</script>

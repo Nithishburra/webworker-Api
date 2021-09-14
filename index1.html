@@ -1,0 +1,9 @@
+<script>
+    if(window.Worker){
+        let Thread1 = new Worker("reverse1.js");
+        Thread1.postMessage("hey");
+        Thread1.onmessage = function(e){
+            console.log(e.data);
+        }
+    }
+</script>

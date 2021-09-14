@@ -1,0 +1,11 @@
+<script>
+    if(window.Worker){
+
+       let addThread = new Worker("add.js");
+       addThread.postMessage({"num1":10,"num2":40});
+       addThread.onmessage=function(e){
+           console.log(e.data);
+       }
+
+    }
+</script>
